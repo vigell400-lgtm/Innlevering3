@@ -1,38 +1,36 @@
 package no.hvl.dat100.oppgave2;
 
-import no.hvl.dat100.common.TODO;
-
 public class Bilde extends Tekst {
 
-	// TODO - objekt variable
-	
-	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
-	}
+    // objektvariabel
+    private String url;
 
-	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
-	}
-	
-	public String getUrl() {
-		throw new UnsupportedOperationException(TODO.method());
+    public Bilde(int id, String bruker, String dato, String tekst, String url) {
+        super(id, bruker, dato, tekst);
+        this.url = url;
+    }
 
-	}
+    public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
+        super(id, bruker, dato, likes, tekst);
+        this.url = url;
+    }
 
-	public void setUrl(String url) {
-		throw new UnsupportedOperationException(TODO.method());
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	@Override
-	public String toString() {
-		throw new UnsupportedOperationException(TODO.method ());
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	}
+    @Override
+    public String toString() {
+        // DAT100-format: type-linje + super + spesifikke felt
+        return "BILDE\n" + super.toString() + url + "\n";
+    }
 
-	// Metoden nedenfor er kun for valgfri oppgave 6
-	public String toHTML() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-				
-	}
+    // Valgfri oppgave 6
+    public String toHTML() {
+        return ""; // implementeres kun hvis du tar oppgave 6
+    }
 }
